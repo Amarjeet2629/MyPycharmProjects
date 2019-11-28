@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load staticfiles %}
+{% block css_content %}
+    <link rel = "stylesheet" href="{% static 'css/homepage.css' %}"></link>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            {% bootstrap_form course_create_form %}
+            <input type="submit" name="create">
+        </form>
+    </div>
+{% endblock %}

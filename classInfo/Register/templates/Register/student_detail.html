@@ -1,0 +1,10 @@
+{% extends 'Register/base.html' %}
+{% block body_content %}
+    <div class="jumbotron">
+        <h1>Details of : {{ student.name }}</h1>
+        <ul>
+            <li>Roll Number : {{ student.roll }}</li>
+            <li>Department : {{ student.dept }}</li>
+        </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sign Up!!!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'CSS/newstyle.css'%}">
+  </head>
+  <body>
+      <div class="container">
+          <div class="row">
+              <div class="col-md-10 offset=md-1">
+                  <div class="row">
+                    <div class="col-md-5 register-left" >
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3RWhA7YN1pnn6Qbka6JT9cZHdgqkBlPG-BY55yWWlOgy1N2ol6g" alt="arrow down">
+                      <h3>Join Us</h3>
+                      <p>Subscribe Easy Tutorials Youtube Chanel</p>
+                      <button type="button" class="btn btn-primary">About Us</button>
+                    </div>
+                    <div class="col-md-7 register-right">
+                        <h2>Register Here</h2>
+                        <div class="register-form">
+                          <form method="POST" action="">
+                              {{ form.as_p }}
+                              {% csrf_token %}
+                          <button type="submit" class="btn btn-primary">Register</button>
+                          </form>
+
+                        </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </body>
+</html>

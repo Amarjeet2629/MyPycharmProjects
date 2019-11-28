@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block css_content %}
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <h2>Welcome to the classroom Web app.<br></h2>
+        <div class="container" align="center">
+            <img src="https://www.eschoolpad.com/wp-content/uploads/2015/09/g_apple_classroom.png" width="600" height="400" alt="">
+            <h3>To get started create an account.</h3>
+        </div>
+    </div>
+{% endblock %}

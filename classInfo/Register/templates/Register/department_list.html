@@ -1,0 +1,12 @@
+{% extends 'Register/base.html' %}
+{% block body_content %}
+    <h2>List of departments at IIT-BHU</h2>
+<div>
+   <ol>
+       {% for dept in department_list %}
+        <li><a href="{{ dept.id }}">{{ dept.name }}</a>
+        </li>
+       {% endfor %}
+   </ol>
+</div>
+{% endblock %}

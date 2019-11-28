@@ -1,0 +1,40 @@
+{%  extends 'base.html' %}
+{% load bootstrap4 %}
+{% load staticfiles %}
+{% block css_content %}
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg">
+                <h2>{{ obj.name }}</h2>
+                <div class="container">
+                    <h6>Number of student enrolled: {{ obj.student.count }}</h6>
+                    <h6>Number of instructor: {{ obj.instructor.count }}</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md">
+                <h3>About the course:</h3>
+                <div class="container">
+                     <h6>{{ obj.description }}</h6>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md">
+                {% if user in obj.student.all %}
+                    <h3>Not liking the Course. You may leave :)</h3>
+                    <a class="btn btn-alert btn-large" href="{% url 'subject:course_leave' slug=obj.slug %}">Leave</a>
+                {% else %}
+                    <h3>What to Join this Course ???</h3>
+                    <a class="btn btn-primary btn-large" color="white" href="{% url 'subject:course_join' slug=obj.slug %}">Join</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+    <a href="{%  url 'Entry:host_register' %}">Host</a>
+    <a href="{% url 'Entry:visitor_register' %}">Visitor</a>
+{% endblock %}

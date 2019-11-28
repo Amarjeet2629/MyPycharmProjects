@@ -1,0 +1,29 @@
+{%  extends 'base.html' %}
+{% load bootstrap4 %}
+{% load staticfiles %}
+{% block css_content %}
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="col-rg" align="center" >
+        <h2 align="center">List of subjects</h2>
+        <img src="https://ak1.picdn.net/shutterstock/videos/1034191451/thumb/6.jpg" width="1200" height="300" alt="classroom image">
+    </div>
+    <div class="box">
+        <div class="box-heading">
+            <h3>subjects</h3>
+        </div>
+        <div class="box-content">
+            <p>Our subject guides include information on studying, courses, careers, and much more:</p>
+            <ul>
+                {% for foo in list %}
+                    <li><a href="{% url 'subject:course_detail' slug=foo.slug %}" color="white">{{ foo.name }}</a></li>
+                {% endfor %}
+
+            </ul>
+        </div>
+    </div>
+
+
+{% endblock %}

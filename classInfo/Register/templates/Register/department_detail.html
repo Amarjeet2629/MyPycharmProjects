@@ -1,0 +1,19 @@
+{% extends 'Register/base.html' %}
+{% block body_content %}
+ <div class="container">
+    {% if department_detail.students.count %}
+        <h1>List of students in {{ department_detail.name }}</h1>
+        <ul>
+         {% for det in department_detail.students.all %}
+            <li><a href="{% url 'Register:stud_detail' pk=det.pk %}">{{ det.name }}</a></li>
+
+         {% endfor %}
+     {% else %}
+        <h1>No students Enrolled!</h1>
+
+        </ul>
+    {% endif %}
+
+ </div>
+
+{% endblock %}

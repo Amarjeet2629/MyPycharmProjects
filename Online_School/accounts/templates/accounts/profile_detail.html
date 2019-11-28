@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block css_content %}
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}"></link>
+{% endblock %}
+{% load bootstrap4 %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md">
+                <img src="{{ obj.profile_pic.url }}" width="300" height="300" alt="Profile Pic" id="profile_pic"></img>
+            </div>
+            <div class="col-md">
+               <div class="container">
+                    <h3>Name: {{ obj.user.first_name | title}}  {{ obj.user.last_name | title }}</h3>
+               </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
