@@ -5,4 +5,4 @@ django-bootstrap4==1.0.1
 django-phone-field==1.8.0
 pytz==2019.3
 soupsieve==1.9.5
-sqlparse==0.3.0
+sqlparse==0.4.4
